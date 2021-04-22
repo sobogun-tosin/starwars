@@ -1,0 +1,32 @@
+section {
+  .movie-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    margin: 10px auto;
+  }
+
+  .movie-card {
+    border: 3px solid #000;
+    border-radius: 8px;
+    color: #ffe6e6;
+    width: 350px;
+    padding: 5px;
+    text-align: center;
+    margin: 15px;
+    text-decoration: none;
+    transition: all 1s linear;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.8);
+      color: rgb(27, 27, 27);
+    }
+
+    @media screen and (max-width: 420px) {
+      margin: 5px;
+      padding: 2px;
+      width: 300px;
+    }
+  }
+}

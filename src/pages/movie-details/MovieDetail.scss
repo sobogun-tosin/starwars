@@ -1,0 +1,77 @@
+.movie-detail-container {
+  display: flex;
+  justify-content: center;
+  background: rgb(166, 166, 167);
+  min-height: 90vh;
+
+  .movie-detail-body {
+    display: flex;
+    justify-content: space-between;
+    color: cornsilk;
+    width: 70%;
+    height: 100%;
+    margin: 0 auto;
+
+    @media screen and (max-width: 980px) {
+      width: 90%;
+    }
+    @media screen and (max-width: 710px) {
+      display: block;
+    }
+  }
+  h3 {
+    font-size: 2rem;
+  }
+
+  h4 {
+    font-size: 1.25rem;
+  }
+
+  span {
+    color: rgb(37, 37, 37);
+  }
+
+  .movie-detail-content {
+    width: 50%;
+    padding: 10px;
+
+    @media screen and (max-width: 710px) {
+      width: 80%;
+    }
+  }
+
+  .movie-detail-character {
+    width: 35%;
+    padding: 10px;
+
+    .characters {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .characters-name {
+      color: rgb(37, 37, 37);
+      text-decoration: none;
+
+      margin: 0 0 5px 1.5rem;
+      font-size: 1.5rem;
+    }
+
+    @media screen and (max-width: 710px) {
+      width: 80%;
+    }
+  }
+
+  .movieImg {
+    width: 400px;
+    height: 250px;
+
+    @media screen and (max-width: 420px) {
+      width: 320px;
+    }
+    @media screen and (max-width: 350px) {
+      width: 250px;
+      height: 200px;
+    }
+  }
+}
