@@ -12,7 +12,7 @@ import {
   GET_CHARACTER_DETAILS,
   GET_CHARACTER_MOVIES,
   CharacterMovies,
-} from "../types";
+} from "./types";
 
 interface InitialState {
   loading: boolean;

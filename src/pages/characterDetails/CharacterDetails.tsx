@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router";
-import { getCharacterDetails } from "../../redux/actions/StarWarAction";
+import { getCharacterDetails } from "../../redux/StarWarAction";
 import { RootStore } from "../../redux/Store";
 import "./CharacterDetails.scss";
 import charImg from "../../images/characterImg.jpg";
@@ -22,9 +22,7 @@ const CharacterDetails = () => {
 
   useEffect(() => {
     dispatch(getCharacterDetails(id));
-  }, [id]);
-
-  console.log(loading);
+  }, [id, dispatch]);
 
   if (loading) {
     return <div className="loading">Loading...</div>;

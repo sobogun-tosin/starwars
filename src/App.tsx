@@ -1,9 +1,9 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Home from "./pages/Home";
-import Nav from "./components/nav/Nav";
-import MovieDetails from "./pages/movie-details/MovieDetails";
-import CharacterDetails from "./pages/character-details/CharacterDetails";
+import Nav from "./components/navbar/Nav";
+import MovieDetails from "./pages/movieDetails/MovieDetails";
+import CharacterDetails from "./pages/characterDetails/CharacterDetails";
 
 function App() {
   return (

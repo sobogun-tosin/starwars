@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
-import { getMovieDetails } from "../../redux/actions/StarWarAction";
+import { getMovieDetails } from "../../redux/StarWarAction";
 import { RootStore } from "../../redux/Store";
 import sampleImg from "../../images/sampleImg.jpg";
 
@@ -41,7 +41,7 @@ const MovieDetails = () => {
 
   useEffect(() => {
     dispatch(getMovieDetails(id));
-  }, [id]);
+  }, [id, dispatch]);
 
   if (loading) {
     return <div className="loading">Loading...</div>;

@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
-import StarWarReducer from "./reducers/StarWarReducer";
+import StarWarReducer from "./StarWarReducer";
 
 const RootReducer = combineReducers({ starWars: StarWarReducer });
 
