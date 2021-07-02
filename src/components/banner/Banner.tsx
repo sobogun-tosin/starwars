@@ -1,13 +1,13 @@
 import React from "react";
-import "./Banner.scss";
+import styles from "./Banner.module.scss";
 import banner from "../../images/banner.jpg";
 import Features from "../features/Features";
 
 const Banner = () => {
   return (
-    <section className="section-container">
-      <img src={banner} alt="banner" />
-      <div className="movie-container">
+    <section className={styles.banner}>
+      <img src={banner} alt="banner" className={styles.banner__img} />
+      <div className={styles.banner__feature}>
         <Features />
       </div>
     </section>

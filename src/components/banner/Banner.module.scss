@@ -1,16 +1,16 @@
-.section-container {
+.banner {
   background: black;
   position: relative;
   overflow: auto;
 
-  img {
+  &__img {
     width: 100%;
     height: 700px;
     object-fit: cover;
     opacity: 0.3;
   }
 
-  .movie-container {
+  &__feature {
     position: absolute;
     top: 0;
     left: 0;

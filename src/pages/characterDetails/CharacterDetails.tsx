@@ -3,22 +3,15 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router";
 import { getCharacterDetails } from "../../redux/StarWarAction";
 import { RootStore } from "../../redux/Store";
-import "./CharacterDetails.scss";
+import styles from "./CharacterDetails.module.scss";
 import charImg from "../../images/characterImg.jpg";
 import { Link } from "react-router-dom";
 
 const CharacterDetails = () => {
   const { id } = useParams<any>();
   const dispatch = useDispatch();
-  const character = useSelector(
-    (state: RootStore) => state.starWars.characterDetails
-  );
-
-  const movies = useSelector(
-    (state: RootStore) => state.starWars.characterMovies
-  );
-
-  const loading = useSelector((state: RootStore) => state.starWars.loading);
+  const starwars = useSelector((state: RootStore) => state.starWars);
+  const { characterDetails, loading, characterMovies } = starwars;
 
   useEffect(() => {
     dispatch(getCharacterDetails(id));
@@ -29,39 +22,43 @@ const CharacterDetails = () => {
   }
 
   return (
-    <div className="character-container">
-      <div className="character-body">
-        <div className="character-img-container">
-          <img src={charImg} alt="Charcter-Img" className="character-img" />
+    <div className={styles.character}>
+      <div className={styles.character__container}>
+        <div className={styles.character__img_container}>
+          <img
+            src={charImg}
+            alt="Charcter-Img"
+            className={styles.character__img}
+          />
         </div>
-        <div className="character-content">
+        <div className={styles.character__content}>
           <h3>Character Details</h3>
-          {character && (
-            <div className="character-details">
+          {characterDetails && (
+            <div className={styles.character__details}>
               <h4>
-                Name: <span>{character.name}</span>
+                Name: <span>{characterDetails.name}</span>
               </h4>
               <h4>
-                D.O.B: <span>{character.birth_year}</span>
+                D.O.B: <span>{characterDetails.birth_year}</span>
               </h4>
               <h4>
-                Gender: <span>{character.gender}</span>
+                Gender: <span>{characterDetails.gender}</span>
               </h4>
               <h4>
-                Height: <span>{character.height}</span>
+                Height: <span>{characterDetails.height}</span>
               </h4>
             </div>
           )}
-          {movies && (
-            <div className="character-details">
+          {characterMovies && (
+            <div className={styles.character__details}>
               <h4>Movies</h4>
-              {movies.map((movie) => {
+              {characterMovies.map((movie) => {
                 const { title, url } = movie;
                 const newUrl = url.replace(/\D/g, "");
                 return (
                   <Link
                     to={`/movie/${newUrl}`}
-                    className="character-movies"
+                    className={styles.character__movies}
                     key={url}
                   >
                     {title}

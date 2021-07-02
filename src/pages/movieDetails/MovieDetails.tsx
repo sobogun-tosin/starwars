@@ -1,4 +1,4 @@
-import "./MovieDetail.scss";
+import styles from "./MovieDetail.module.scss";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router";
@@ -10,11 +10,8 @@ import sampleImg from "../../images/sampleImg.jpg";
 const MovieDetails = () => {
   const { id } = useParams<any>();
   const dispatch = useDispatch();
-  const movies = useSelector((state: RootStore) => state.starWars.movie);
-  const characters = useSelector(
-    (state: RootStore) => state.starWars.characters
-  );
-  const loading = useSelector((state: RootStore) => state.starWars.loading);
+  const starwars = useSelector((state: RootStore) => state.starWars);
+  const { movies, loading, characters } = starwars;
 
   // const [movies, setMovies] = useState<any>([]);
   // const [characters, setCharacters] = useState<any>({});
@@ -48,12 +45,16 @@ const MovieDetails = () => {
   }
 
   return (
-    <div className="movie-detail-container">
-      <div className="movie-detail-body">
-        <div className="movie-detail-content">
+    <div className={styles.movieDetail}>
+      <div className={styles.movieDetail__container}>
+        <div className={styles.movieDetail__content}>
           {movies && (
             <div key={movies.episode_id}>
-              <img src={sampleImg} alt="StarwarImg" className="movieImg" />
+              <img
+                src={sampleImg}
+                alt="StarwarImg"
+                className={styles.movieDetail__img}
+              />
               <h3>{movies.title}</h3>
               <p>{movies.opening_crawl}</p>
               <h4>
@@ -68,9 +69,9 @@ const MovieDetails = () => {
             </div>
           )}
         </div>
-        <div className="movie-detail-character">
+        <div className={styles.movieDetail__character}>
           <h3>Chracters</h3>
-          <div className="characters">
+          <div className={styles.movieDetail__character_list}>
             {characters &&
               characters.map((char) => {
                 const { name, url } = char;
@@ -79,7 +80,7 @@ const MovieDetails = () => {
                 return (
                   <Link
                     to={`/character/${newUrl}`}
-                    className="characters-name"
+                    className={styles.movieDetail__character_name}
                     key={url}
                   >
                     {name}

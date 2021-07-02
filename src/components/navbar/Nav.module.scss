@@ -1,16 +1,15 @@
-nav {
+.nav {
   min-height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
   background: linear-gradient(rgb(53, 52, 52) 70%, rgb(119, 118, 118));
 
-  .nav-body {
+  &__body {
     width: 80%;
-
-    img {
-      width: 250px;
-      height: 120px;
-    }
+  }
+  &__img {
+    width: 250px;
+    height: 100px;
   }
 }

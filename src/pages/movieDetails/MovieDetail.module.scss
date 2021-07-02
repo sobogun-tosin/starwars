@@ -1,0 +1,56 @@
+h3 {
+  font-size: 2rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+span {
+  color: rgb(37, 37, 37);
+}
+
+.movieDetail {
+  display: flex;
+  justify-content: center;
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    color: cornsilk;
+    width: 80%;
+  }
+
+  &__content {
+    padding: 10px;
+  }
+
+  &__character {
+    padding: 10px;
+
+    &_list {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    &_name {
+      color: rgb(37, 37, 37);
+      text-decoration: none;
+      margin: 0 0 5px 1.5rem;
+      font-size: 1.5rem;
+
+      &:hover {
+        color: rgb(57, 35, 162);
+      }
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 250px;
+
+    @media screen and (max-width: 460px) {
+      width: 320px;
+    }
+  }
+}

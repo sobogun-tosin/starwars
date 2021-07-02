@@ -1,0 +1,66 @@
+$margin: 0 auto;
+
+@mixin font_color {
+  color: rgb(37, 37, 37);
+  font-family: "Times New Roman", Times, serif;
+}
+
+.character {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  color: cornsilk;
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    justify-content: center;
+    width: 80%;
+  }
+
+  &__img_container {
+    background: linear-gradient(blue, red);
+    width: 85%;
+    height: 90%;
+    margin: $margin;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+  }
+
+  &__content {
+    margin: $margin;
+    padding: 0 10px;
+
+    h3 {
+      margin: 0;
+      font-size: 2rem;
+    }
+  }
+  &__details {
+    letter-spacing: 2px;
+
+    h4 {
+      font-size: 1.35rem;
+      font-weight: 700;
+    }
+    span {
+      @include font_color();
+    }
+  }
+
+  &__movies {
+    @include font_color();
+    display: block;
+    text-decoration: none;
+    margin-bottom: 8px;
+    font-size: 1.25rem;
+
+    &:hover {
+      color: rgb(57, 45, 162);
+    }
+  }
+}

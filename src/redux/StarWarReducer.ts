@@ -18,7 +18,7 @@ interface InitialState {
   loading: boolean;
   error: string;
   films?: StarwarFilms[];
-  movie?: MovieDetails;
+  movies?: MovieDetails;
   characters?: Characters[];
   characterDetails?: CharacterDetails;
   characterMovies?: CharacterMovies[];
@@ -46,7 +46,7 @@ const StarWarReducer = (
     case GET_MOVIE_DETAILS:
       return {
         ...state,
-        movie: action.payload,
+        movies: action.payload,
         loading: false,
       };
     case GET_CHARACTERS:
