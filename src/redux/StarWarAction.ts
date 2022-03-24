@@ -16,7 +16,6 @@ export const getMovies = () => async (dispatch: Dispatch<StarwarsAction>) => {
   try {
     const res = await axios.get(`https://swapi.dev/api/films/`);
     const dataRes = res.data;
-    console.log(dataRes);
     if (!res.status) {
       throw new Error(dataRes.statusText);
     } else {
@@ -25,7 +24,7 @@ export const getMovies = () => async (dispatch: Dispatch<StarwarsAction>) => {
         payload: dataRes.results,
       });
     }
-  } catch (err) {
+  } catch (err: any) {
     dispatch({
       type: ERROR,
       payload: err.message,
@@ -59,10 +58,10 @@ export const getMovieDetails =
           payload: data,
         });
       }
-    } catch (err) {
+    } catch (err: any) {
       dispatch({
         type: ERROR,
-        payload: err,
+        payload: err.message,
       });
     }
   };
@@ -95,10 +94,10 @@ export const getCharacterDetails =
           payload: movies,
         });
       }
-    } catch (err) {
+    } catch (err: any) {
       dispatch({
         type: ERROR,
-        payload: err,
+        payload: err.message,
       });
     }
   };
