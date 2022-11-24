@@ -1,6 +1,7 @@
 .movie {
   display: flex;
   justify-content: center;
+  z-index: 100;
 
   &__container {
     display: grid;
@@ -26,6 +27,12 @@
     &:hover {
       background: rgba(255, 255, 255, 0.8);
       color: rgb(27, 27, 27);
+    }
+
+    & > h4 {
+      & > span {
+        color: #c2bdbd;
+      }
     }
   }
 }

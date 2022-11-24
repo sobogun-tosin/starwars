@@ -45,7 +45,6 @@ export const getMovieDetails =
           return newRes.data;
         })
       );
-      console.log(data);
       if (!res.status) {
         throw new Error(dataRes.statusText);
       } else {
@@ -81,7 +80,6 @@ export const getCharacterDetails =
           return newFilm.data;
         })
       );
-      console.log(movies);
       if (!res.status) {
         throw new Error(dataRes.statusText);
       } else {

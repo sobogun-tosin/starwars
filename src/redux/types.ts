@@ -63,12 +63,12 @@ interface GetMovieDetail {
 
 interface GetCharacters {
   type: typeof GET_CHARACTERS;
-  payload: any[];
+  payload: Characters[];
 }
 
 interface GetCharacterMovies {
   type: typeof GET_CHARACTER_MOVIES;
-  payload: any[];
+  payload: CharacterMovies[];
 }
 
 interface GetCharacterDetails {

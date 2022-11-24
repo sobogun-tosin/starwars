@@ -1,21 +1,20 @@
-import React, { useEffect } from "react";
-import styles from "./Features.module.scss";
+import React from "react";
 import { Link } from "react-router-dom";
-import { getMovies } from "../../redux/StarWarAction";
-import { useDispatch, useSelector } from "react-redux";
-import { RootStore } from "../../redux/Store";
+import { StarwarFilms } from "../../redux/types";
 
-const Features = () => {
-  const dispatch = useDispatch();
-  const starWars = useSelector((state: RootStore) => state.starWars);
-  const { films, loading } = starWars;
+import styles from "./Features.module.scss";
 
+interface FeatureProps {
+  films: StarwarFilms[];
+  loading: boolean;
+}
+
+const Features: React.FC<FeatureProps> = ({ films, loading }) => {
   // const [films, setFilms] = useState<any>([]);
   // const getMovies = async () => {
   //   try {
   //     const res = await axios.get(`https://swapi.dev/api/films/`);
   //     const dataRes = res.data;
-  //     console.log(dataRes);
   //     if (!res.status) {
   //       throw new Error(dataRes.statusText);
   //     } else {
@@ -25,10 +24,6 @@ const Features = () => {
   //     console.log(err);
   //   }
   // };
-
-  useEffect(() => {
-    dispatch(getMovies());
-  }, [dispatch]);
 
   if (loading) {
     return <div className="loading">Loading...</div>;
@@ -40,7 +35,7 @@ const Features = () => {
           films.map((film: any) => {
             const { episode_id, title, opening_crawl, release_date, url } =
               film;
-            const newUrl = url.replace(/\D/g, "");
+            const newUrl = url.split("/")[5];
             return (
               <Link
                 to={`/movie/${newUrl}`}

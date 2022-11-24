@@ -17,13 +17,18 @@ import {
 interface InitialState {
   loading: boolean;
   error: string;
-  films?: StarwarFilms[];
-  movies?: MovieDetails;
-  characters?: Characters[];
-  characterDetails?: CharacterDetails;
-  characterMovies?: CharacterMovies[];
+  films: StarwarFilms[];
+  movies: MovieDetails | null;
+  characters: Characters[];
+  characterDetails: CharacterDetails | null;
+  characterMovies: CharacterMovies[];
 }
 const initialState: InitialState = {
+  films: [],
+  movies: null,
+  characterDetails: null,
+  characterMovies: [],
+  characters: [],
   loading: false,
   error: "",
 };

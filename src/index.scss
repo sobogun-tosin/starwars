@@ -9,11 +9,19 @@ body {
   background: rgb(166, 166, 167);
 }
 
+iframe {
+  pointer-events: none;
+}
+
 .loading {
-  font-size: 7rem;
+  font-size: 6rem;
   font-weight: 900;
   font-family: "Times New Roman", Times, serif;
-  color: rgb(53, 61, 68);
+  color: rgb(96, 104, 111);
   position: absolute;
   left: 30%;
+  display: grid;
+  height: calc(100vh - 100px);
+  place-items: center;
+  width: 100vw;
 }

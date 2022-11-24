@@ -54,7 +54,7 @@ const CharacterDetails = () => {
               <h4>Movies</h4>
               {characterMovies.map((movie) => {
                 const { title, url } = movie;
-                const newUrl = url.replace(/\D/g, "");
+                const newUrl = url.split("/")[5];
                 return (
                   <Link
                     to={`/movie/${newUrl}`}

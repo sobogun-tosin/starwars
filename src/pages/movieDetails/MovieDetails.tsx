@@ -24,7 +24,6 @@ const MovieDetails = () => {
 
   //     characterData.map(async (character: string) => {
   //       const response = await axios.get(character);
-  //       console.log(response);
   //     });
   //     if (!res.status) {
   //       throw new Error(dataRes.statusText);
@@ -75,7 +74,7 @@ const MovieDetails = () => {
             {characters &&
               characters.map((char) => {
                 const { name, url } = char;
-                const newUrl = url.replace(/\D/g, "");
+                const newUrl = url.split("/")[5];
 
                 return (
                   <Link
